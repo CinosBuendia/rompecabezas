@@ -7,20 +7,54 @@
     <script type="text/javascript" src="js/puzzle/slidingPuzzle.js"></script>
 	<script type="text/javascript" src="js/puzzle/wordSearchPuzzle.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 </head>
 <body ng-app="puzzleApp">
-
+<center>
 	<div ng-include="type"></div>
 	<script type="text/ng-template" id="sliding-puzzle">
-		<fieldset id="sliding-simple">
-			<legend>Rompecabezas de Datos</legend>
-			<sliding-puzzle size="3x3" src="img/asimov.jpeg"></sliding-puzzle>
+		<div id="androide-div" class="puzzlecss">	
+		<fieldset id="Androide-3">
+			<legend>Androides</legend>
+			<sliding-puzzle size="3x3" src="img/loca.jpeg"></sliding-puzzle>
+			<br/>
+			<button type="button" class="btn btn-primary btn-lg btn-block" onclick="$('.puzzlecss').hide();$('#asimov-4-div').show();">Siguiente >> </button>
 		</fieldset><br/>
-		<fieldset id="sliding-simple">
-			<legend>Rompecabezas de Datos</legend>
-			<sliding-puzzle size="4x4" src="img/loca.jpeg"></sliding-puzzle>
-		</fieldset><br/>
+			
+		</div>
+		<div id="asimov-4-div" class="puzzlecss" style="display: none;">
+			<fieldset id="asimov-4">
+				<legend>Isaac Asimov</legend>
+				<sliding-puzzle size="3x4" src="img/asimov.jpeg"></sliding-puzzle>
+				<br/>
+			<button type="button" class="btn btn-primary btn-lg btn-block" onclick="$('.puzzlecss').hide();$('#calesita-5-div').show();">Siguiente >> </button>
+			<br/>
+			<button type="button" class="btn btn-secondary btn-lg btn-block" onclick="$('.puzzlecss').hide();$('#androide-div').show();"><< Anterior</button>	
+			</fieldset><br/>
+		</div>
+
+		<div id="calesita-5-div" class="puzzlecss" style="display: none;">
+			<fieldset id="calesita-4">
+				<legend>Fin de la humanidad</legend>
+				<sliding-puzzle size="4x4" src="img/calesita.jpeg"></sliding-puzzle>
+				<br/>
+			<button type="button" class="btn btn-primary btn-lg btn-block" onclick="$('.puzzlecss').hide();$('#mundo-6-div').show();">Siguiente >> </button>
+			<br/>
+			<button type="button" class="btn btn-secondary btn-lg btn-block" onclick="$('.puzzlecss').hide();$('#asimov-4-div').show();"><< Anterior</button>	
+			</fieldset><br/>
+		</div>
+
+		<div id="mundo-6-div" class="puzzlecss" style="display: none;">
+			<fieldset id="mundo-6">
+				<legend>El nuevo mundo</legend>
+				<sliding-puzzle size="4x5" src="img/mundo.jpeg"></sliding-puzzle>
+				<br/>
+		
+			<button type="button" class="btn btn-secondary btn-lg btn-block" onclick="$('.puzzlecss').hide();$('#calesita-5-div').show();"><< Anterior</button>	
+			</fieldset><br/>
+		</div>
 	</script>
 
 	<script type="text/ng-template" id="word-search-puzzle">
@@ -37,5 +71,6 @@
 			</div>
 		</div>
 	</script>
+	</center>
 </body>
 </html>
